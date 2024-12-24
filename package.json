@@ -6,22 +6,32 @@
 		"build": "npx tsc",
 		"start": "node dist/index.js",
 		"dev": "nodemon src/index.ts",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"prepare": "husky"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"lint-staged": {
+		"*.ts": [
+			"npm run lint:fix"
+		]
+	},
 	"description": "",
+	"dependencies": {
+		"express": "^4.21.2"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.6.1",
 		"@commitlint/config-conventional": "^19.6.0",
+		"@eslint/js": "^9.17.0",
 		"@types/node": "^22.10.2",
+		"eslint": "^9.17.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.2.11",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.7.2"
-	},
-	"dependencies": {
-		"express": "^4.21.2"
+		"typescript": "^5.7.2",
+		"typescript-eslint": "^8.18.2"
 	}
 }
