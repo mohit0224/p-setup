@@ -1,6 +1,3 @@
-import DotenvFlow from "dotenv-flow";
-DotenvFlow.config();
-
 const envConfig = {
     PORT: Number(process.env.PORT),
     CORS_ORIGIN: process.env.CORS_ORIGIN,
