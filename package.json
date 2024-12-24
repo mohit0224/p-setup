@@ -3,9 +3,10 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-    "test":"node index.js",
-		"start": "node index.js",
-		"dev": "nodemon index.js",
+		"build": "npx tsc",
+		"start": "node dist/index.js",
+		"dev": "nodemon src/index.ts",
+		"test":"node src/index.ts",
 		"prepare": "husky"
 	},
 	"keywords": [],
@@ -13,7 +14,10 @@
 	"license": "ISC",
 	"description": "",
 	"devDependencies": {
+		"@types/node": "^22.10.2",
 		"husky": "^9.1.7",
-		"lint-staged": "^15.2.11"
+		"lint-staged": "^15.2.11",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.2"
 	}
 }
