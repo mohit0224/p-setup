@@ -3,11 +3,17 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
+    "test":"node index.js",
 		"start": "node index.js",
-		"dev": "nodemon index.js"
+		"dev": "nodemon index.js",
+		"prepare": "husky"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"description": ""
+	"description": "",
+	"devDependencies": {
+		"husky": "^9.1.7",
+		"lint-staged": "^15.2.11"
+	}
 }
