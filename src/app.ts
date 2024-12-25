@@ -6,6 +6,7 @@ import notFoundRoute from "./middlewares/notFoundRoute";
 import { apiResponse } from "./utils/httpResponse.utils";
 import { morganFnc, morganFormat } from "./configs/morgan.config";
 import globalErrorHandler from "./middlewares/globalErrorHandler.middleware";
+import logRouter from "./routes/logs.routes";
 
 const app: Application = express();
 
@@ -21,6 +22,8 @@ app.get(
         res.status(200).json(new apiResponse(200, "Welcome to the API", "", req));
     })
 );
+
+app.use("/api/v1/logs", logRouter);
 
 app.use(notFoundRoute);
 app.use(globalErrorHandler);

@@ -36,7 +36,7 @@ const logger = createLogger({
         new transports.File({ filename: isProduction ? "logs/Production.log" : "logs/Development.log" }),
         new transports.MongoDB({
             db: `${envConfig.MONGODB_URI}/${envConfig.MONGODB_DBNAME}`,
-            collection: "log",
+            collection: "logs",
             level: "info",
             format: combine(timestamp(), json()),
         }),
