@@ -19,6 +19,25 @@ const consoleLogFormat = format.combine(
 );
 
 // Create a Winston logger
+
+const transportsArray: (transports.ConsoleTransportInstance | transports.FileTransportInstance | any)[] = [
+    new transports.Console({
+        format: consoleLogFormat,
+    }),
+    new transports.File({ filename: isProduction ? "logs/Production.log" : "logs/Development.log" }),
+];
+
+if (isProduction) {
+    transportsArray.push(
+        new transports.MongoDB({
+            db: `${envConfig.MONGODB_URI}/${envConfig.MONGODB_DBNAME}`,
+            collection: "logs",
+            level: "info",
+            format: combine(timestamp(), json()),
+        })
+    );
+}
+
 const logger = createLogger({
     level: "info",
     format: combine(
@@ -29,18 +48,7 @@ const logger = createLogger({
             return info;
         })()
     ),
-    transports: [
-        new transports.Console({
-            format: consoleLogFormat,
-        }),
-        new transports.File({ filename: isProduction ? "logs/Production.log" : "logs/Development.log" }),
-        new transports.MongoDB({
-            db: `${envConfig.MONGODB_URI}/${envConfig.MONGODB_DBNAME}`,
-            collection: "logs",
-            level: "info",
-            format: combine(timestamp(), json()),
-        }),
-    ],
+    transports: transportsArray,
 });
 
 export default logger;

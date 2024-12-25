@@ -16,9 +16,10 @@ export default tseslint.config({
     rules: {
         "no-console": "error",
         quotes: ["error", "double", { allowTemplateLiterals: true }],
-        // "@typescript-eslint/no-explicit-any": "off", // turn off to Allow explicit any syntax
+        "@typescript-eslint/no-explicit-any": "off", // turn off to Allow explicit any syntax
         "@typescript-eslint/no-unsafe-assignment": "off", // turn off to Allow explicit any syntax
         "@typescript-eslint/no-unused-vars": "off", // turn off to Allow unused variables
+        "@typescript-eslint/no-redundant-type-constituents": "off", // turn off to Allow explicit any syntax
     },
 });
 
