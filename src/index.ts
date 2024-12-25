@@ -1,22 +1,15 @@
 import "dotenv-flow/config";
 import app from "./app";
 import envConfig from "./configs/envConfig";
-import { error, log } from "console";
+import logger from "./utils/logger.utils";
 
 const PORT: number = envConfig.PORT;
 
 (() => {
     try {
-        app.listen(PORT, () => {
-            log(`Server is running...`, {
-                meta: {
-                    port: PORT,
-                    Uri: envConfig.BACKEND_URI,
-                },
-            });
-        });
+        app.listen(PORT, () => logger.info(`Server is running on ${envConfig.BACKEND_URI} `));
     } catch (err) {
-        error("Error occurred: ", err);
+        logger.error("Error occurred: ", err);
         process.exit(1);
     }
 })();

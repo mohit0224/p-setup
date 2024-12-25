@@ -23,11 +23,14 @@
     },
     "description": "",
     "dependencies": {
+        "@types/morgan": "^1.9.9",
         "cross-env": "^7.0.3",
         "dotenv": "^16.4.7",
         "dotenv-flow": "^4.1.0",
         "express": "^4.21.2",
-        "jsonwebtoken": "^9.0.2"
+        "jsonwebtoken": "^9.0.2",
+        "morgan": "^1.10.0",
+        "winston": "^3.17.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.6.1",
