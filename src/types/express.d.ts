@@ -1,4 +1,4 @@
-// import * as express from "express";
+import * as express from "express";
 import { JwtPayload } from "jsonwebtoken";
 
 declare global {

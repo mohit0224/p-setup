@@ -1,7 +1,9 @@
+import "winston-mongodb";
 import { createLogger, format, transports } from "winston";
-const { combine, timestamp, json, colorize } = format;
+const { combine, timestamp, json } = format;
 import * as sourceMapSupport from "source-map-support";
 import isProduction from "./isProduction.utils";
+import envConfig from "../configs/envConfig";
 
 sourceMapSupport.install();
 
@@ -19,12 +21,25 @@ const consoleLogFormat = format.combine(
 // Create a Winston logger
 const logger = createLogger({
     level: "info",
-    format: combine(colorize(), timestamp(), json()),
+    format: combine(
+        timestamp(),
+        json(),
+        format((info) => {
+            info.environment = isProduction ? "Production" : "Development";
+            return info;
+        })()
+    ),
     transports: [
         new transports.Console({
             format: consoleLogFormat,
         }),
         new transports.File({ filename: isProduction ? "logs/Production.log" : "logs/Development.log" }),
+        new transports.MongoDB({
+            db: `${envConfig.MONGODB_URI}/${envConfig.MONGODB_DBNAME}`,
+            collection: "log",
+            level: "info",
+            format: combine(timestamp(), json()),
+        }),
     ],
 });
 

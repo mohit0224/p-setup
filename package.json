@@ -32,7 +32,8 @@
         "mongoose": "^8.9.2",
         "morgan": "^1.10.0",
         "source-map-support": "^0.5.21",
-        "winston": "^3.17.0"
+        "winston": "^3.17.0",
+        "winston-mongodb": "^6.0.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.6.1",
