@@ -1,4 +1,4 @@
-import mongoose, { Connection, ConnectionStates } from "mongoose";
+import mongoose, { Connection } from "mongoose";
 import envConfig from "../configs/envConfig";
 import logger from "../utils/logger.utils";
 
@@ -8,7 +8,7 @@ const dbConnect = async (): Promise<void> => {
             dbName: envConfig.MONGODB_DBNAME,
         });
 
-        if (connection.readyState === ConnectionStates.connected) {
+        if (connection.readyState === mongoose.STATES.connected) {
             logger.info("Database is connected to server");
         }
 
