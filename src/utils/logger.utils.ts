@@ -1,6 +1,7 @@
 import { createLogger, format, transports } from "winston";
 const { combine, timestamp, json, colorize } = format;
 import * as sourceMapSupport from "source-map-support";
+import isProduction from "./isProduction.utils";
 
 sourceMapSupport.install();
 
@@ -23,9 +24,7 @@ const logger = createLogger({
         new transports.Console({
             format: consoleLogFormat,
         }),
-        new transports.File({ filename: "logs/all.log" }),
-        new transports.File({ filename: "logs/info.log", level: "info" }),
-        new transports.File({ filename: "logs/error.log", level: "error" }),
+        new transports.File({ filename: isProduction ? "logs/Production.log" : "logs/Development.log" }),
     ],
 });
 
