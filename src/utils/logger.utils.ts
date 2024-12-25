@@ -23,7 +23,8 @@ const logger = createLogger({
         new transports.Console({
             format: consoleLogFormat,
         }),
-        new transports.File({ filename: "logs/app.log" }),
+        new transports.File({ filename: "logs/all.log" }),
+        new transports.File({ filename: "logs/info.log", level: "info" }),
         new transports.File({ filename: "logs/error.log", level: "error" }),
     ],
 });
