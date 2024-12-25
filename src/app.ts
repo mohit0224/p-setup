@@ -10,8 +10,6 @@ app.use(express.urlencoded({ extended: true, limit: "20mb" }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (_, res: Response) => {
-    const check = false;
-
     res.send("Hello, World!");
 });
 
