@@ -1,5 +1,8 @@
 import { createLogger, format, transports } from "winston";
 const { combine, timestamp, json, colorize } = format;
+import * as sourceMapSupport from "source-map-support";
+
+sourceMapSupport.install();
 
 // Custom format for console logging with colors
 const consoleLogFormat = format.combine(
