@@ -3,6 +3,7 @@ import path from "path";
 import globalErrorHandler from "./middlewares/globalErrorHandler.middleware";
 import asyncHandler from "./utils/asyncHandler.utils";
 import { apiResponse } from "./utils/httpResponse.utils";
+import notFoundRoute from "./middlewares/notFoundRoute";
 
 const app: Application = express();
 
@@ -18,6 +19,7 @@ app.get(
     })
 );
 
+app.use(notFoundRoute);
 app.use(globalErrorHandler);
 
 export default app;
