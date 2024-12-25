@@ -23,7 +23,7 @@ export class apiResponse<T> {
             url: req?.originalUrl || "",
         };
 
-        if (isProduction) {
+        if (!isProduction) {
             delete this.request.ip;
         }
     }
@@ -53,7 +53,7 @@ export class apiError extends Error {
             url: req?.originalUrl || "",
         };
 
-        if (isProduction) {
+        if (!isProduction) {
             delete this.request.ip;
         }
 
