@@ -1,4 +1,5 @@
 import { Request } from "express";
+import isProduction from "./isProduction.utils";
 
 export class apiResponse<T> {
     status: number;
@@ -6,7 +7,7 @@ export class apiResponse<T> {
     success: boolean;
     data?: T;
     request?: {
-        ip: string;
+        ip?: string;
         method: string;
         url: string;
     };
@@ -21,6 +22,10 @@ export class apiResponse<T> {
             method: req?.method || "",
             url: req?.originalUrl || "",
         };
+
+        if (isProduction) {
+            delete this.request.ip;
+        }
     }
 }
 
