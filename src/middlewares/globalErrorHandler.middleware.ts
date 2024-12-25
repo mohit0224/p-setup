@@ -8,6 +8,7 @@ const globalErrorHandler = (err: apiError | Error, _req: Request, res: Response,
             message: err.message,
             success: err.success,
             errors: err.errors,
+            request: err.request,
         });
     } else {
         res.status(500).json({

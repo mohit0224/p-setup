@@ -34,14 +34,28 @@ export class apiError extends Error {
     success: boolean;
     data: null;
     errors: string[];
+    request?: {
+        ip?: string;
+        method: string;
+        url: string;
+    };
 
-    constructor(statusCode: number, message = "Something went wrong", errors: string[] = [], stack: string = "") {
+    constructor(statusCode: number, message = "Something went wrong", req?: Request, errors: string[] = [], stack: string = "") {
         super(message);
         this.status = statusCode;
         this.message = message;
         this.success = false;
         this.data = null;
         this.errors = errors;
+        this.request = {
+            ip: req?.ip || "",
+            method: req?.method || "",
+            url: req?.originalUrl || "",
+        };
+
+        if (isProduction) {
+            delete this.request.ip;
+        }
 
         if (stack) {
             this.stack = stack;
