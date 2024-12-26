@@ -24,7 +24,7 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/mohit0224/p-setup.git>
    cd p-setup
    ```
 
