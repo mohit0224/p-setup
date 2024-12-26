@@ -10,12 +10,13 @@ import logRouter from "./routes/logs.routes";
 import healthRouter from "./routes/health.routes";
 import helmet from "helmet";
 import isHttps from "./middlewares/isHttps.middleware";
+import helmetConfig from "./configs/helmet.config";
 
 const app: Application = express();
 
 app.set("trust proxy", 1);
 app.use(isHttps);
-app.use(helmet());
+app.use(helmet(helmetConfig));
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ extended: true, limit: "20mb" }));
 app.use(express.static(path.join(__dirname, "public")));
