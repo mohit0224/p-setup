@@ -15,7 +15,7 @@ class healthController {
         const statics = {
             applicationHealth: {
                 uptime: `${process.uptime().toFixed(2)}s`,
-                environment: isProduction ? "production" : "development",
+                environment: isProduction ? "Production" : "Development",
                 nodeVersion: process.version,
                 apiStatus: result.data?.status,
                 memoryUsage: {
