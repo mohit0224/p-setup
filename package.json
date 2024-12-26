@@ -14,7 +14,7 @@
         "prepare": "husky"
     },
     "keywords": [],
-    "author": "",
+    "author": "Mohit Dheer",
     "license": "ISC",
     "lint-staged": {
         "*.ts": [
