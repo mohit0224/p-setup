@@ -12,7 +12,7 @@ const PORT: number = envConfig.PORT;
         app.listen(PORT, () => logger.info(`Server is running on ${envConfig.BACKEND_URI} `));
     } catch (err) {
         logger.error("Error occurred: ", err);
-        // process.exit(1);
+        process.exit(1);
     }
 })().catch((err) => {
     logger.error("Unhandled error in async function: ", err);
