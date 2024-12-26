@@ -5,7 +5,7 @@ interface RateLimiterOptions {
     message: string;
 }
 
-const limiter = (max = 5) =>
+const limiter = (max: number = 5) =>
     rateLimit({
         windowMs: 10 * 1000,
         max,
