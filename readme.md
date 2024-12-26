@@ -110,16 +110,16 @@ project-folder/
 │   ├── app.ts             # Main application file
 │   └── index.ts           # Entry point
 ├── test/                  # Test files
-├── .env                   # Environment variables
-└── .prettierignore        # Files to ignore by Prettier
-└── .prettierrc            # Prettier configuration
-└── commitlint.config.js   # Commitlint configuration
+├── .env.example           # Example environment variables file
+├── .gitignore             # Git ignore file
+├── .prettierignore        # Files to ignore by Prettier
+├── .prettierrc            # Prettier configuration
+├── commitlint.config.js   # Commitlint configuration
 ├── package.json           # Project metadata
 ├── ecosystem.config.js    # PM2 configuration
 ├── eslint.config.mjs      # ESLint configuration
 ├── nodemon.json           # Nodemon configuration
 ├── package-lock.json      # Lockfile for npm dependencies
-├── package.json           # Project metadata (duplicate entry)
 ├── readme.md              # Readme file
 └── tsconfig.json          # TypeScript configuration
 ```
