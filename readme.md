@@ -89,16 +89,39 @@ npm run build
 
 ```
 project-folder/
-├── src/
-│   ├── controllers/    # Request handlers
-│   ├── middlewares/    # Custom middleware
-│   ├── models/         # Mongoose models
-│   ├── routes/         # Application routes
-│   ├── utils/          # Utility functions
-│   └── index.ts        # Entry point
-├── .env                # Environment variables
-├── package.json        # Project metadata
-└── ecosystem.config.js # PM2 configuration
+├── .husky/                # Husky configuration for Git hooks
+├── docker/                # Docker-related files
+├── logs/                  # Log files
+├── nginx/                 # Nginx configuration
+├── public/                # Public assets
+├── script/                # Scripts for various tasks
+├── src/                   # Source code
+│   ├── configs/           # Configuration files
+│   ├── constant/          # Constant values
+│   ├── controllers/       # Request handlers
+│   ├── database/          # Database-related code
+│   ├── middlewares/       # Custom middleware
+│   ├── models/            # Mongoose models
+│   ├── routes/            # Application routes
+│   ├── services/          # Business logic
+│   ├── templates/         # Template files
+│   ├── types/             # TypeScript types
+│   ├── utils/             # Utility functions
+│   ├── app.ts             # Main application file
+│   └── index.ts           # Entry point
+├── test/                  # Test files
+├── .env                   # Environment variables
+└── .prettierignore        # Files to ignore by Prettier
+└── .prettierrc            # Prettier configuration
+└── commitlint.config.js   # Commitlint configuration
+├── package.json           # Project metadata
+├── ecosystem.config.js    # PM2 configuration
+├── eslint.config.mjs      # ESLint configuration
+├── nodemon.json           # Nodemon configuration
+├── package-lock.json      # Lockfile for npm dependencies
+├── package.json           # Project metadata (duplicate entry)
+├── readme.md              # Readme file
+└── tsconfig.json          # TypeScript configuration
 ```
 
 ## Tools & Libraries
