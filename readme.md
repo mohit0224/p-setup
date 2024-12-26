@@ -47,6 +47,11 @@ Run the app in development mode:
 npm run dev
 ```
 
+Create a `.env.development` file in the root directory with the necessary environment variables. You can use the `.env.example` file as a reference:
+```bash
+cp .env.example .env.development
+```
+
 ## Build
 
 Compile TypeScript to JavaScript:
@@ -65,6 +70,11 @@ npm run build
    ```bash
    npm run start:prod
    ```
+
+Create a `.env.production` file in the root directory with the necessary environment variables. You can use the `.env.example` file as a reference:
+```bash
+cp .env.example .env.production
+```
 
 ## Linting & Formatting
 
