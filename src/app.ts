@@ -7,6 +7,7 @@ import { apiResponse } from "./utils/httpResponse.utils";
 import { morganFnc, morganFormat } from "./configs/morgan.config";
 import globalErrorHandler from "./middlewares/globalErrorHandler.middleware";
 import logRouter from "./routes/logs.routes";
+import healthRouter from "./routes/health.routes";
 
 const app: Application = express();
 
@@ -24,6 +25,7 @@ app.get(
 );
 
 app.use("/api/v1/logs", logRouter);
+app.use("/api/v1/health", healthRouter);
 
 app.use(notFoundRoute);
 app.use(globalErrorHandler);
