@@ -133,6 +133,14 @@ project-folder/
 - **Morgan & Winston**: Request and application logging
 - **Prettier & ESLint**: Code formatting and linting
 
+## Routes
+
+The application has the following routes defined in `src/app.ts`:
+
+1. `/api/v1/logs` - Handles requests related to logs. This route accepts a body parameter environment which should be either development or production. All logs are saved in MongoDB, and this route allows you to retrieve logs based on the specified environment.
+2. `/api/v1/health` - Handles requests related to health checks.
+
+
 ## Contribution
 
 Contributions are welcome! Please follow these steps:
