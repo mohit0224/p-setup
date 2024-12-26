@@ -13,7 +13,7 @@ import isHttps from "./middlewares/isHttps.middleware";
 import helmetConfig from "./configs/helmet.config";
 import cors from "cors";
 import corsConfig from "./configs/cors.config";
-import limiter from "./middlewares/rateLimiter.middleware";
+import rateLimiter from "./middlewares/rateLimiter.middleware";
 
 const app: Application = express();
 
@@ -21,7 +21,7 @@ app.set("trust proxy", 1);
 app.use(isHttps);
 app.use(cors(corsConfig));
 app.use(helmet(helmetConfig));
-app.use(limiter(100));
+app.use(rateLimiter(100));
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ extended: true, limit: "20mb" }));
 app.use(express.static(path.join(__dirname, "public")));
