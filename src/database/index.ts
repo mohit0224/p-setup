@@ -26,7 +26,7 @@ const dbConnect = async (): Promise<void> => {
     } catch (err: unknown) {
         if (err instanceof Error) {
             logger.error("Error while connecting to MongoDB:", err);
-            throw new Error(err.message); // Rethrow after logging
+            throw new Error(err.message);
         } else {
             logger.error("Unknown error while connecting to MongoDB");
             throw new Error("Unknown error while connecting to MongoDB");
