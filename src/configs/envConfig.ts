@@ -10,6 +10,10 @@ interface EnvConfigType {
     REDIS_HOST: string;
     REDIS_PORT: number;
     COOKIE_SIGN: string;
+    SMTP_HOST: string;
+    SMTP_PORT: number;
+    SMTP_USERNAME: string;
+    SMTP_PASS: string;
 }
 
 const envConfig: EnvConfigType = {
@@ -24,6 +28,10 @@ const envConfig: EnvConfigType = {
     REDIS_HOST: String(process.env.REDIS_HOST),
     REDIS_PORT: Number(process.env.REDIS_PORT),
     COOKIE_SIGN: String(process.env.COOKIE_SIGN),
+    SMTP_HOST: String(process.env.SMTP_HOST),
+    SMTP_PORT: Number(process.env.SMTP_PORT),
+    SMTP_USERNAME: String(process.env.SMTP_USERNAME),
+    SMTP_PASS: String(process.env.SMTP_PASS),
 };
 
 export default envConfig;

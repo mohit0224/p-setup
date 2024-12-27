@@ -13,6 +13,8 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 - **Linting & Formatting**: Enforced code quality with ESLint and Prettier.
 - **Commit Validation**: Pre-commit hooks using Husky and CommitLint.
 - **Production-Ready**: PM2 for process management in production environments.
+- **Nodemailer**: Used for sending emails via SMTP.
+- **Handlebars**: Used for rendering email templates with dynamic data.
 
 ## Prerequisites
 
