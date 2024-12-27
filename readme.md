@@ -6,10 +6,10 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 
 - **Framework**: Express.js for fast and scalable server-side development.
 - **TypeScript**: Fully typed and easy-to-maintain codebase.
-- **Security**: Enhanced with `helmet` and `express-rate-limit`.
+- **Security**: Enhanced with Helmet and express-rate-limit.
 - **Database**: MongoDB integration using Mongoose.
-- **Environment Configuration**: Manage configurations using `dotenv` and `dotenv-flow`.
-- **Logging**: Comprehensive logging with `winston` and MongoDB transport.
+- **Environment Configuration**: Manage configurations using dotenv and dotenv-flow.
+- **Logging**: Comprehensive logging with Winston and MongoDB transport.
 - **Linting & Formatting**: Enforced code quality with ESLint and Prettier.
 - **Commit Validation**: Pre-commit hooks using Husky and CommitLint.
 - **Production-Ready**: PM2 for process management in production environments.
@@ -35,7 +35,7 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 
 3. Set up environment variables:
    - Copy `.env.example` to `.env`:
-
+   
      ```bash
      cp .env.example .env
      ```
@@ -77,7 +77,9 @@ Create a `.env.production` file in the root directory with the necessary environ
 cp .env.example .env.production
 ```
 
-## Development
+## Docker Setup
+
+### Development
 
 To run the application in development mode using Docker, follow these steps:
 
@@ -86,35 +88,34 @@ To run the application in development mode using Docker, follow these steps:
    docker build -t express:dev -f docker/development/Dockerfile .
    ```
 
-2 Run the Docker container:
-  ```bash
-  docker run --name expressdev -p 8000:8000 -p 27017:27017 --rm -v ".:/home/app" express:dev
-  ```
+2. Run the Docker container:
+   ```bash
+   docker run --name expressdev -p 8000:8000 -p 27017:27017 --rm -v ".:/home/app" express:dev
+   ```
 
-   This will run the app in development mode with the environment variables from the .env.development file.
+   This will run the app in development mode with the environment variables from the `.env.development` file.
 
 3. Access the app:
-   - Visit http://localhost:8000 to see your app running.
+   - Visit [http://localhost:8000](http://localhost:8000) to see your app running.
 
-## Production
+### Production
 
-To run the application in development mode using Docker, follow these steps:
+To run the application in production mode using Docker, follow these steps:
 
 1. Build the Docker image:
    ```bash
    docker build -t express:prod -f docker/production/Dockerfile .
    ```
 
-2 Run the Docker container:
-  ```bash
-  docker run --name expressprod -p 8080:8080 express:prod     
-  ```
+2. Run the Docker container:
+   ```bash
+   docker run --name expressprod -p 8080:8080 express:prod
+   ```
 
-   This will run the app in development mode with the environment variables from the .env.development file.
+   This will run the app in production mode with the environment variables from the `.env.production` file.
 
 3. Access the app:
-   - Visit http://localhost:8080 to see your app running.
-
+   - Visit [http://localhost:8080](http://localhost:8080) to see your app running.
 
 ## Linting & Formatting
 
@@ -122,14 +123,17 @@ To run the application in development mode using Docker, follow these steps:
   ```bash
   npm run lint
   ```
+
 - Fix linting issues:
   ```bash
   npm run lint:fix
   ```
+
 - Check formatting:
   ```bash
   npm run format:check
   ```
+
 - Fix formatting:
   ```bash
   npm run format:fix
@@ -187,10 +191,9 @@ project-folder/
 
 The application has the following routes defined in `src/app.ts`:
 
-1. `/api/v1/logs` - Handles requests related to logs. This route accepts a body parameter environment which should be either development or production. All logs are saved in MongoDB, and this route allows you to retrieve logs based on the specified environment.
+1. `/api/v1/logs` - Handles requests related to logs. This route accepts a body parameter `environment` which should be either `development` or `production`. All logs are saved in MongoDB, and this route allows you to retrieve logs based on the specified environment.
 
 2. `/api/v1/health` - Handles requests related to health checks.
-
 
 ## Contribution
 
@@ -201,14 +204,17 @@ Contributions are welcome! Please follow these steps:
    ```bash
    git checkout -b feature-name
    ```
+
 3. Commit changes:
    ```bash
    git commit -m "Add feature"
    ```
+
 4. Push to your branch:
    ```bash
    git push origin feature-name
    ```
+
 5. Create a Pull Request.
 
 ## License
