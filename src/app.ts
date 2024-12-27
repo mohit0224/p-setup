@@ -16,6 +16,7 @@ import corsConfig from "./configs/cors.config";
 import rateLimiter from "./middlewares/rateLimiter.middleware";
 import cookieParser from "cookie-parser";
 import compression from "compression";
+import envConfig from "./configs/envConfig";
 
 const app: Application = express();
 
@@ -28,7 +29,7 @@ app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ extended: true, limit: "20mb" }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(morgan(morganFormat, morganFnc));
-app.use(cookieParser());
+app.use(cookieParser(envConfig.COOKIE_SIGN));
 app.use(compression());
 
 app.get(
