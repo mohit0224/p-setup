@@ -82,9 +82,9 @@ cp .env.example .env.production
 To run the application in development mode using Docker, follow these steps:
 
 1. Build the Docker image:
-   ```bash
-   docker build -t express:dev -f docker/development/Dockerfile .
-   ```
+    ```bash
+    docker build -t express:dev -f docker/development/Dockerfile .
+    ```
 
 2 Run the Docker container:
    ```bash
@@ -94,16 +94,16 @@ To run the application in development mode using Docker, follow these steps:
    This will run the app in development mode with the environment variables from the .env.development file.
 
 3. Access the app:
-   - Visit http://localhost:8000 to see your app running.
+    - Visit http://localhost:8000 to see your app running.
 
 ## Production
 
 To run the application in development mode using Docker, follow these steps:
 
 1. Build the Docker image:
-   ```bash
-   docker build -t express:prod -f docker/production/Dockerfile .
-   ```
+    ```bash
+    docker build -t express:prod -f docker/production/Dockerfile .
+    ```
 
 2 Run the Docker container:
    ```bash
@@ -113,7 +113,7 @@ To run the application in development mode using Docker, follow these steps:
    This will run the app in development mode with the environment variables from the .env.development file.
 
 3. Access the app:
-   - Visit http://localhost:8080 to see your app running.
+    - Visit http://localhost:8080 to see your app running.
 
 
 ## Linting & Formatting
