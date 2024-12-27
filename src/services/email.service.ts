@@ -34,7 +34,7 @@ const emailTransporter = async (email: string, subject: string, emailTemplate: s
     const html = template(data);
 
     const mailOptions = {
-        from: "testing@yuvamanthan.org",
+        from: "example@example.com",
         to: `${email}`,
         subject,
         html,
