@@ -35,7 +35,7 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 
 3. Set up environment variables:
    - Copy `.env.example` to `.env`:
-   
+
      ```bash
      cp .env.example .env
      ```
@@ -180,3 +180,4 @@ This project is licensed under the ISC License.
 
 Built with ❤️ by Mohit Dheer.
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin&style=flat)](https://www.linkedin.com/in/mohit-dheer/)
