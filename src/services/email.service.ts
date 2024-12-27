@@ -29,7 +29,7 @@ const getTemplate = (templateName: string) => {
     return template;
 };
 
-const emailTransporter = async (email: string, subject: string, emailTemplate: string, data: object) => {
+const emailTransporter = async (email: string, subject: string, emailTemplate: string, data?: object) => {
     const template = getTemplate(emailTemplate);
     const html = template(data);
 
