@@ -35,6 +35,7 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 
 3. Set up environment variables:
    - Copy `.env.example` to `.env`:
+   
      ```bash
      cp .env.example .env
      ```
