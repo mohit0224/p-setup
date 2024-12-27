@@ -35,7 +35,12 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
    npm install
    ```
 
-3. Set up environment variables:
+3. Please install PM2 in your local machine for a better experience:
+   ```bash
+   npm install -g pm2
+   ```
+
+4. Set up environment variables:
    - Copy `.env.example` to `.env`:
    
      ```bash
