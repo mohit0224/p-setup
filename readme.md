@@ -97,7 +97,7 @@ To run the application in development mode using Docker, follow these steps:
 
 2. Run the Docker container:
    ```bash
-   docker run --name expressdev -p 8000:8000 -p 27017:27017 --rm -v ".:/home/app" express:dev
+   docker run --name expressdev -p 8000:8000 --rm -v ".:/home/app" express:dev
    ```
 
    This will run the app in development mode with the environment variables from the `.env.development` file.
