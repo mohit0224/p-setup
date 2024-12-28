@@ -5,12 +5,14 @@ Thank you for considering contributing to the Production-Ready-Setup project! We
 ## How to Contribute
 
 ### Step 1: Fork the Repository
+
 Create your copy of the repository by forking it:
 
 - Navigate to the repository on GitHub.
 - Click the **Fork** button in the upper-right corner.
 
 ### Step 2: Clone the Repository
+
 Clone your forked repository to your local machine:
 
 ```bash
@@ -19,6 +21,7 @@ cd p-setup
 ```
 
 ### Step 3: Create a New Branch
+
 Before making any changes, create a new branch for your contribution:
 
 ```bash
@@ -26,12 +29,15 @@ git checkout -b <branch-name>
 ```
 
 ### Step 4: Make Changes
+
 Resolve bugs or implement new features as described in the **Issues** section of the repository. Ensure you follow the project's coding standards and include a description of your changes.
 
 ### Step 5: Test Your Changes
+
 Thoroughly test your changes to ensure they work as intended and do not introduce any regressions. If applicable, add or update tests in the `test/` directory.
 
 ### Step 6: Commit Your Changes
+
 Stage your changes and commit them with a meaningful message:
 
 ```bash
@@ -40,6 +46,7 @@ git commit -m "Fix: [describe the issue or feature]"
 ```
 
 ### Step 7: Push to Your Fork
+
 Push your changes to your forked repository:
 
 ```bash
@@ -47,6 +54,7 @@ git push origin <branch-name>
 ```
 
 ### Step 8: Create a Pull Request
+
 Open a pull request (PR) from your branch to the main branch of the original repository:
 
 1. Go to the original repository on GitHub.
@@ -57,6 +65,7 @@ Open a pull request (PR) from your branch to the main branch of the original rep
 6. Include details about the changes you made in the description.
 
 ### Step 9: Address Feedback
+
 Be responsive to any feedback provided by reviewers and make necessary updates. Once approved, your contribution will be merged into the main branch.
 
 ## Coding Guidelines
