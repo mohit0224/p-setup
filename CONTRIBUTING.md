@@ -14,7 +14,7 @@ Create your copy of the repository by forking it:
 Clone your forked repository to your local machine:
 
 ```bash
-git clone https://github.com/<your-username>/p-setup.git
+git clone https://github.com/mohit0224/p-setup.git
 cd p-setup
 ```
 
