@@ -15,6 +15,7 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 - **Production-Ready**: PM2 for process management in production environments.
 - **Nodemailer**: Used for sending emails via SMTP.
 - **Handlebars**: Used for rendering email templates with dynamic data.
+- **Query Parameter Validation**: Custom middleware to prevent multiple values for query parameters, except for those in a whitelist (e.g., duration), ensuring safer query handling and reducing potential attack vectors like HTTP Parameter Pollution (HPP).
 
 ## Prerequisites
 

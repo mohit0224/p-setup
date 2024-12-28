@@ -17,10 +17,15 @@ import rateLimiter from "./middlewares/rateLimiter.middleware";
 import cookieParser from "cookie-parser";
 import compression from "compression";
 import envConfig from "./configs/envConfig";
+import hpp from "hpp";
+import filterQuery from "./middlewares/filterQuery.middleware";
+import hppConfig from "./configs/hpp.config";
 
 const app: Application = express();
 
 app.set("trust proxy", 1);
+app.use(filterQuery);
+app.use(hpp(hppConfig));
 app.use(isHttps);
 app.use(cors(corsConfig));
 app.use(helmet(helmetConfig));
