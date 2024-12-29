@@ -6,7 +6,7 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 
 - **Framework**: Express.js for fast and scalable server-side development.
 - **TypeScript**: Fully typed and easy-to-maintain codebase.
-- **Security**: Enhanced with Helmet and express-rate-limit.
+- **Security**: Enhanced with Helmet, express-rate-limit, and CSRF protection.
 - **Database**: MongoDB integration using Mongoose.
 - **Environment Configuration**: Manage configurations using dotenv and dotenv-flow.
 - **Logging**: Comprehensive logging with Winston and MongoDB transport.
