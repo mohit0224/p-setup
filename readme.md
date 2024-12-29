@@ -206,6 +206,44 @@ The application has the following routes defined in `src/app.ts`:
 
 3. `/api/v1/csrf-token` - Generates a CSRF token for secure requests. This endpoint ensures protection against cross-site request forgery attacks..
 
+## CSRF Token Handling in Frontend
+
+To implement CSRF token handling in the frontend, follow these steps:
+
+1. **Create an Axios Instance**: Use Axios to make HTTP requests with cookies enabled.
+
+   ```javascript
+   import axios from "axios";
+
+   // Create an Axios instance
+   const axiosInstance = axios.create({
+       baseURL: "process.env.BACKEND_URI",
+       withCredentials: true,
+   });
+   ```
+
+2. **Fetch the CSRF Token**: Call the `/api/v1/csrf-token` route and store the token in the Axios instance's default headers.
+
+   ```javascript
+   async function setCsrfToken() {
+       try {
+           const response = await axiosInstance.get("/api/v1/csrf-token");
+           const data = response.data.data;
+           axiosInstance.defaults.headers["X-CSRF-Token"] = data;
+       } catch (error) {
+           console.error("Error fetching CSRF token:", error);
+       }
+   }
+
+   setCsrfToken();
+
+   export default axiosInstance;
+   ```
+
+3. **Use the Axios Instance**: Make all HTTP requests using this configured instance to ensure the CSRF token is included.
+
+This implementation ensures that the CSRF token is dynamically fetched and automatically added to every request made through the Axios instance.
+
 ## Contribution
 
 Contributions are welcome! Please follow these steps:
