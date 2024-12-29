@@ -16,6 +16,7 @@ A robust and scalable Express.js application boilerplate with TypeScript, design
 - **Nodemailer**: Used for sending emails via SMTP.
 - **Handlebars**: Used for rendering email templates with dynamic data.
 - **Query Parameter Validation**: Custom middleware to prevent multiple values for query parameters, except for those in a whitelist (e.g., duration), ensuring safer query handling and reducing potential attack vectors like HTTP Parameter Pollution (HPP).
+- **CSRF Protection**: Secure endpoints with CSRF tokens, ensuring requests are verified and protected from cross-site request forgery attacks.
 
 ## Prerequisites
 
@@ -202,6 +203,8 @@ The application has the following routes defined in `src/app.ts`:
 1. `/api/v1/logs` - Handles requests related to logs. This route accepts a body parameter `environment` which should be either `development` or `production`. All logs are saved in MongoDB, and this route allows you to retrieve logs based on the specified environment.
 
 2. `/api/v1/health` - Handles requests related to health checks.
+
+3. `/api/v1/csrf-token` - Generates a CSRF token for secure requests. This endpoint ensures protection against cross-site request forgery attacks..
 
 ## Contribution
 

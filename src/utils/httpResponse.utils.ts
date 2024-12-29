@@ -12,7 +12,7 @@ export class apiResponse<T> {
         url: string;
     };
 
-    constructor(statusCode: number, message = "Success", data?: T, req?: Request) {
+    constructor(statusCode: number, message = "Success", req?: Request, data?: T) {
         this.status = statusCode;
         this.message = message;
         this.success = statusCode < 400;

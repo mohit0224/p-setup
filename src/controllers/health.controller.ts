@@ -32,7 +32,7 @@ class healthController {
             },
         };
 
-        res.status(200).json(new apiResponse(200, "Health status check-up !!", statics, req));
+        res.status(200).json(new apiResponse(200, "Health status check-up !!", req, statics));
     });
 }
 

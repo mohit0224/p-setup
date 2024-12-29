@@ -13,7 +13,7 @@ const corsConfig = {
     },
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization", "csrf-token"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-CSRF-Token"],
     optionsSuccessStatus: 204,
     maxAge: 600,
 };
